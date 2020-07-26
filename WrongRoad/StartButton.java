@@ -28,7 +28,7 @@ public class StartButton extends Actor
     {
         if(Greenfoot.mouseClicked(this))
         {
-            Greenfoot.setWorld(new MainWorld());
+            Greenfoot.setWorld(new MainWorld(0));
         }
     }
 }
