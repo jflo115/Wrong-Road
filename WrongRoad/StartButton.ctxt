@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=StartButton
+comment0.text=\r\n\ Start\ Button\ works\ as\ our\ initial\ start\ button\ in\ the\ beggining\r\n\ of\ the\ game.\r\n\ \r\n\ @author\ Justin\ Flores\r\n\ @version\ V1.0\r\n
+comment1.params=
+comment1.target=StartButton()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ click()
+numComments=4

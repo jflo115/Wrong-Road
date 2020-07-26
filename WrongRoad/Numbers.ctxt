@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Numbers
+comment1.params=text
+comment1.target=Numbers(java.lang.String)
+comment2.params=text\ font
+comment2.target=void\ setFont(java.lang.String,\ greenfoot.Font)
+comment3.params=text
+comment3.target=void\ setText(java.lang.String)
+comment4.params=
+comment4.target=void\ act()
+comment5.params=
+comment5.target=void\ click()
+numComments=6
