@@ -15,6 +15,8 @@ public class StartButton extends Actor
         String text = "START";
         GreenfootImage img = new GreenfootImage(text.length()*20,30);
         img.setColor(Color.WHITE);
+        Font font = new Font("Arial",false,false,25);
+        img.setFont(font);
         img.drawString(text, 2, 20);
         setImage(img);
     }    

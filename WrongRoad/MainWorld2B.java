@@ -1,22 +1,34 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-
-public class MainWorld extends World
+/**
+ * Write a description of class MainWorld2B here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class MainWorld2B extends World
 {
     private static int score;
-    Numbers one = new Numbers("1");
-    Numbers two = new Numbers("2");
-    Numbers three = new Numbers("3");
-    Numbers four = new Numbers("4");
-    Numbers five = new Numbers("5");
+    private static int lives;
+    String level = "B";
+    Numbers2B one = new Numbers2B("1");
+    Numbers2B two = new Numbers2B("2");
+    Numbers2B three = new Numbers2B("3");
+    Numbers2B four = new Numbers2B("4");
     Label pick = new Label("Pick a road");
     Label scoreCounter = new Label("Score: ");
-    public MainWorld(int score)
+    Label livesCounter = new Label("Lives : ");
+    /**
+     * Constructor for objects of class MainWorld2B.
+     * 
+     */
+    public MainWorld2B(int score, int lives)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         
-        this.score=score;
+        this.score = score;
+        this.lives = lives;
         
         
         //Setting the size of each number label and scoreCounter
@@ -25,8 +37,8 @@ public class MainWorld extends World
         two.setFont("2",Numfont);
         three.setFont("3",Numfont);
         four.setFont("4",Numfont);
-        five.setFont("5",Numfont);
         scoreCounter.setFont("Score: " + score,Numfont);
+        livesCounter.setFont("Lives: " + lives,Numfont);
         
         //setting the size of pick 
         Font pickFont = new Font("Arial",false,false,40);
@@ -39,9 +51,9 @@ public class MainWorld extends World
         addObject(two,150,200);
         addObject(three,200,200);
         addObject(four,250,200);
-        addObject(five,300,200);
         addObject(pick,350,50);
-        addObject(scoreCounter,450,200);
+        addObject(scoreCounter,500,200);
+        addObject(livesCounter,500,250);
     }
     
     public static void game(int num)
@@ -49,28 +61,35 @@ public class MainWorld extends World
         int finalScore;
         //serial killer makes guess
         int killNum = guess();
-        if(num == killNum)
+        if(num == killNum) 
         {
-            finalScore = score;
-            score = 0;
-            Greenfoot.setWorld(new Game_Over(finalScore));
+            lives--;
+            if(lives == 0) 
+            {
+                finalScore = score;
+                score = 0;
+                Greenfoot.setWorld(new Game_Over(finalScore));
+            }
+            else
+            {
+                Greenfoot.setWorld(new MainWorld2B(score,lives));
+            }
         }
         else
         {
             score++;
-            if(score >= 5)
+            if(score >= 10)
             {
-                Greenfoot.setWorld(new SafeHouse1());
+                Greenfoot.setWorld(new Survival());
             }
             else
-                Greenfoot.setWorld(new MainWorld(score));
+                Greenfoot.setWorld(new MainWorld2B(score,lives));
         }
     }
     
     public static int guess()
     {
-        int guess = (int)(Math.random()  * 5) + 1;
+        int guess = (int)(Math.random()  * 4) + 1;
         return guess;
     }
-
 }

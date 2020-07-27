@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Numbers2A
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Numbers2\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=text
+comment1.target=Numbers2A(java.lang.String)
+comment2.params=text\ font
+comment2.target=void\ setFont(java.lang.String,\ greenfoot.Font)
+comment3.params=text
+comment3.target=void\ setText(java.lang.String)
+comment4.params=
+comment4.target=void\ act()
+comment5.params=
+comment5.target=void\ click()
+numComments=6
